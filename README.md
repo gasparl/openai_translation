@@ -1,8 +1,6 @@
-# README.md
+# Docx Translator with OpenAI
 
-## Advanced Docx Translator with OpenAI GPT-4
-
-This repository provides a Python script for translating `.docx` files using OpenAI's GPT-4 API.
+This repository provides a Python script for translating `.docx` files using OpenAI's GPT(-4) API.
 
 ---
 
