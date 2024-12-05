@@ -75,9 +75,6 @@ def translate_text(text, previous_translations='', previous_texts='', sample_tra
         f"You are a professional translator proficient in {source_lang} and {target_lang}."
         f" Your task is to translate the text with an emphasis on formal equivalence."
         f" Please preserve the original meaning, style, and sentence structure as closely as possible."
-        f" Maintain the formal tone appropriate for literary works."
-        f" Use vocabulary and expressions that reflect the original text."
-        f" If idiomatic expressions do not have direct equivalents, translate them literally."
     )
     if sample_translation:
         system_prompt += f"\n\nUse the following sample translation as a style guide:\n\n{sample_translation}\n\n"
