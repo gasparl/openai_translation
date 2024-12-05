@@ -9,7 +9,8 @@ This repository provides a Python script for translating `.docx` files using Ope
 - Supports translation between any pair of languages (configurable in the script).
 - Handles large texts by splitting them into manageable chunks that fit OpenAI's token limits.
 - Maintains contextual continuity by incorporating previous translations and source text into the translation process.
-- Allows the use of a sample translation file to guide translation tone and style. (The current script focuses on formal equivalence, aiming to preserve the original meaning, style, and structure of the text.)
+- Allows the use of a sample translation file to guide translation tone and style.
+- The specific instructions can be modified. (The current instructions focuse on formal equivalence, aiming to preserve the original meaning, style, and structure of the text.)
 - Reads input from `.docx` files and writes translated output to `.docx` files while preserving paragraph structure.
 - Includes error handling and retry mechanisms for API calls.
 
@@ -40,7 +41,7 @@ Create a `config.json` file in the same directory as the script and add your Ope
 }
 ```
 
-### Input and Output Files
+### Input
 
 - Prepare the `.docx` file you want to translate.
 - Optionally, create a `.docx` file with sample translations to guide the translation style.
@@ -59,7 +60,7 @@ Create a `config.json` file in the same directory as the script and add your Ope
    - Replace `output.docx` with the desired output file path.
    - Optionally, specify a sample translation file.
 
-2. Run the script:
+2. Run the script; e.g. in bash:
 
    ```bash
    python openai_translator.py
