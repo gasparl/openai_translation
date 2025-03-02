@@ -9,7 +9,7 @@ import tiktoken
 import json
 
 # Set the model name
-MODEL_NAME = 'gpt-4'
+MODEL_NAME = 'gpt-4o'
 
 # Get the directory of the current script
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -66,7 +66,7 @@ def split_text(text_list, max_tokens=2048, model=MODEL_NAME):
         chunks.append(current_chunk.strip())
     return chunks
 
-def translate_text(text, previous_translations='', previous_texts='', sample_translation='', source_lang='English', target_lang='Hungarian', model=MODEL_NAME):
+def translate_text(text, previous_translations='', previous_texts='', sample_translation='', source_lang='English', target_lang='Polish', model=MODEL_NAME):
     """
     Translates text using the OpenAI API, including previous translations and original texts.
     """
@@ -95,7 +95,7 @@ def translate_text(text, previous_translations='', previous_texts='', sample_tra
 
     # Ensure total tokens are within limit
     max_model_tokens = 8192 if '32k' not in model else 32768
-    max_completion_tokens = 1024  # Reserve tokens for the completion
+    max_completion_tokens = 4096  # Reserve tokens for the completion
     max_prompt_tokens = max_model_tokens - max_completion_tokens
 
     # Estimate tokens
@@ -238,4 +238,4 @@ if __name__ == "__main__":
     # 'output.docx' with your desired output file path,
     # and 'sample_translation.docx' with the path to your sample translation (optional)
     # main('input.docx', 'output.docx', sample_translation_file='sample_translation.docx')
-    main('input.docx', 'output.docx')
+    main('source.docx', 'translation.docx')
